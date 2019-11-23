@@ -1,0 +1,3 @@
+{"total": {"lines":{"total":28,"covered":23,"skipped":0,"pct":82.14},"statements":{"total":28,"covered":23,"skipped":0,"pct":82.14},"functions":{"total":6,"covered":5,"skipped":0,"pct":83.33},"branches":{"total":8,"covered":4,"skipped":0,"pct":50}}
+,"/Users/stephaniecherubin/sites/courses/Front-End-Foundations/mathSubstitution/src/index.js": {"lines":{"total":28,"covered":23,"skipped":0,"pct":82.14},"functions":{"total":6,"covered":5,"skipped":0,"pct":83.33},"statements":{"total":28,"covered":23,"skipped":0,"pct":82.14},"branches":{"total":8,"covered":4,"skipped":0,"pct":50}}
+}
