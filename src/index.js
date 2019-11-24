@@ -5,6 +5,8 @@
 const phi = (1 + Math.sqrt(5)) / 2
 Number.prototype = phi
 
+const phi = (1 + Math.sqrt(5)) / 2
+Number.phi = phi
 module.exports.phi = phi;
 
 // Challenge 2 Number Methods: round, floor, ceil - These method already exists, your job is to make a method that does the same thing. Rather than Math.round(x) your method will work like this: x.round().
