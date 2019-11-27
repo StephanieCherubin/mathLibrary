@@ -70,8 +70,7 @@ const toDollars = (amount) => {
   return `$${numberFormat}`
 }
 /* Example:
-console.log(toDollars(amount))*/
-console.log(toDollars(83.9))
+console.log(toDollars(83.9))*/
 module.exports.toDollars = toDollars;
 
 
