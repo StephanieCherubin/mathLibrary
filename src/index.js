@@ -90,7 +90,7 @@ const calculateInterest = function (total, years, ratePercent, roundToPlaces) {
   var interestRate = ((ratePercent/100) + 1);
   return (total * Math.pow(interestRate, years)).toFixed(roundToPlaces);
 }
-/*Ecample:
+/*Example:
 console.log(calculateInterest(995, 13, 2, 2)); */
 module.exports.calculateInterest = calculateInterest;
 
