@@ -28,7 +28,6 @@ const pad = (str, length) =>
 console.log(pad(String(34.801), 4,4))
 
 
-// Stretch Goal: Check for invalid input. If the value input is not a number or is not included the function should throw an error.
 const degToRad = (deg) => {
   try {
     if (typeof deg == 'number' || deg == ' ') {
