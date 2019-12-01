@@ -139,5 +139,4 @@ const  randomHexColor = ()  => {
 }
 /* Example:
 console.log(randomHexColor());*/
-
 module.exports.randomHexColor = randomHexColor;
