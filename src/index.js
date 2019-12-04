@@ -1,3 +1,4 @@
+/* eslint-disable no-extend-native */
 /* Challenge 1 GoldenRatio - Add a new property to Number that is the Golden Ratio */
 
 const phi = (1 + Math.sqrt(5)) / 2;
@@ -37,12 +38,12 @@ const pad = (num, before = 0, after = 0) => {
   l[1] = l[1].length < after ? l[1] + '0'.repeat((after - l[1].length)) : l[1];
   return l.join('.');
 };
-
+module.exports.pad = pad;
 
 const degToRad = (deg) => {
   try {
-    if (typeof deg == 'number' || deg == ' ') {
-      return deg * Math.PI / 180;
+    if (typeof deg === 'number' || deg === ' ') {
+      return deg * (Math.PI / 180);
     }
     return `${deg} is not a number`;
   } catch (err) {
@@ -59,8 +60,8 @@ If the value input is not a number or is not included the function should throw 
 */
 const radToDeg = (rad) => {
   try {
-    if (typeof rad == 'number' || rad == ' ') {
-      return rad * 180 / Math.PI;
+    if (typeof rad === 'number' || rad === ' ') {
+      return (rad * 180) / Math.PI;
     }
     return `${rad} is not a number`;
   } catch (err) {
@@ -86,25 +87,25 @@ const toDollars = (amount) => {
   return `$${numberFormat}`;
 };
 /* Example:
-console.log(toDollars(83.9))*/
+console.log(toDollars(83.9)) */
 module.exports.toDollars = toDollars;
 
 
 // tax(rate) - returns the amount with tax
-const tax = (price)  => {
+const tax = (price) => {
   const rate = 8.5;
-  const totalPrice = price * rate / 100 + price;
+  const totalPrice = (price * rate) / 100 + price;
   return totalPrice;
 };
-/*Example
-console.log(tax(400));*/
+/* Example
+console.log(tax(400)); */
 module.exports.tax = tax;
 
 
-// Challenge 8 interest(total, year, rate) - Write a function that calculates the interest over time.
-const calculateInterest = function (total, years, ratePercent, roundToPlaces) {
-  var interestRate = ((ratePercent/100) + 1);
-  return (total * Math.pow(interestRate, years)).toFixed(roundToPlaces);
+// calculates the interest over time.
+const calculateInterest = (total, years, ratePercent, roundToPlaces) => {
+  const interestRate = ((ratePercent / 100) + 1);
+  return (total * interestRate ** years(interestRate, years)).toFixed(roundToPlaces);
 };
 /* Example:
 console.log(calculateInterest(995, 13, 2, 2)); */
@@ -112,10 +113,9 @@ module.exports.calculateInterest = calculateInterest;
 
 
 // Challenge 9 mortgage(principal, numberOfPayments, interestRate).
-function getMortgagePayment(startingLoanAmount, totalPayments, interestRate)
-{
-    let interestRatePerMonth = interestRate / 12;
-    return startingLoanAmount * interestRatePerMonth * (Math.pow(1 + interestRatePerMonth, totalPayments)) / (Math.pow(1 + interestRatePerMonth, totalPayments) - 1);
+function getMortgagePayment(startingLoanAmount, totalPayments, interestRate) {
+  const interestRatePerMonth = interestRate / 12;
+  return startingLoanAmount * interestRatePerMonth * ((1 + interestRatePerMonth) ** totalPayments) / (1 + interestRatePerMonth) ** totalPayments - 1;
 }
 /* Example
 console.log(getMortgagePayment(100000, 60, 20)) */
@@ -123,19 +123,14 @@ module.exports.getMortgagePayment = getMortgagePayment;
 
 
 // Challenge 10 intToHex(int) -> #332211
-Number.prototype.hexString = function () {
-  return this.toString(16);
-};
-const intInput = 34;
+Number.prototype.hexString = () => this.toString(16);
 
 
 // random(n) - returns an integer from 0 to n - 1
-Number.prototype.random = function () {
-  return Math.random(this);
-};
+Number.prototype.random = () => Math.random(this);
 
-function getRandomArbitrary(max ) {
-  return Math.round(Math.random() * (max -1 ));
+function getRandomArbitrary(max) {
+  return Math.round(Math.random() * (max - 1));
 }
 /* Example:
 console.log( getRandomArbitrary(2)) */
@@ -150,9 +145,7 @@ module.exports.randomIntegerInRange = randomIntegerInRange;
 
 
 // randomColor() - Returns a random hex color
-const  randomHexColor = ()  => {
-  return `#${Math.floor(Math.random() * 0xffffff).toString(16)}`;
-};
+const randomHexColor = () => `#${Math.floor(Math.random() * 0xffffff).toString(16)}`;
 /* Example:
-console.log(randomHexColor());*/
+console.log(randomHexColor()); */
 module.exports.randomHexColor = randomHexColor;
