@@ -1,22 +1,22 @@
 /* Challenge 1 GoldenRatio - Add a new property to Number that is the Golden Ratio */
 
-const phi = (1 + Math.sqrt(5)) / 2
-Number.phi = phi
+const phi = (1 + Math.sqrt(5)) / 2;
+Number.phi = phi;
 module.exports.phi = phi;
 
 
-// Challenge 2 
+// Challenge 2
 Number.prototype.round = function() {
-  return Math.round(this)
-}
+  return Math.round(this);
+};
 
 Number.prototype.floor = function() {
-  return Math.floor(this)
-}
+  return Math.floor(this);
+};
 
 Number.prototype.ceil = function() {
-  return Math.ceil(this)
-}
+  return Math.ceil(this);
+};
 
 
 // Challenge 3 pad(x, y) - pads Number with x 0s before, and y 0s after.
@@ -29,57 +29,62 @@ Number.prototype.ceil = function() {
 // console.log(pad(String(34.801), 4,4))
 
 const pad = (num, before = 0, after = 0) => {
-  let l = String(num).split('.')
+  const l = String(num).split('.');
   if (l.length === 1) {
-    l.push('0')
+    l.push('0');
   }
-  l[0] = l[0].length < before ? '0'.repeat((before - l[0].length)) + l[0] : l[0]
-  l[1] = l[1].length < after ? l[1] + '0'.repeat((after - l[1].length)) : l[1]
-  return l.join('.')
-}
+  l[0] = l[0].length < before ? '0'.repeat((before - l[0].length)) + l[0] : l[0];
+  l[1] = l[1].length < after ? l[1] + '0'.repeat((after - l[1].length)) : l[1];
+  return l.join('.');
+};
 
 
 const degToRad = (deg) => {
   try {
     if (typeof deg == 'number' || deg == ' ') {
-      return deg * Math.PI / 180
-    } else {
-      return `${deg} is not a number`
+      return deg * Math.PI / 180;
     }
-  } catch(err) {
-    console.error(err);    
+    return `${deg} is not a number`;
+  } catch (err) {
+    console.error(err);
   }
-}
+};
 /* Example:
 console.log(degToRad(56)) */
 module.exports.degToRad = degToRad;
 
 
-// Stretch Goal: Check for invalid input. If the value input is not a number or is not included the function should throw an error.
+/* Stretch Goal: Check for invalid input.
+If the value input is not a number or is not included the function should throw an error.
+*/
 const radToDeg = (rad) => {
   try {
     if (typeof rad == 'number' || rad == ' ') {
-      return rad * 180 / Math.PI
-    } else {
-      return `${rad} is not a number`
+      return rad * 180 / Math.PI;
     }
+    return `${rad} is not a number`;
   } catch (err) {
     console.error(err);
   }
-}
+};
 /* Example:
 console.log(radToDeg(89)) */
 module.exports.radToDeg = radToDeg;
 
 
-// Challenge 6 toDollars(amount) - Formatting money is a common task for software projects. A function could save you time in the future. The goal of this function is to take a numeric value and return a string beginning with a '$' and rounded to two decimal places.
+/*  Challenge 6 toDollars(amount) - Formatting money is a common task for software projects.
+A function could save you time in the future.
+The goal of this function is to take a numeric value
+and return a string beginning with a '$' and rounded to two decimal places.
+*/
 // Example: toDollars(3.9) -> $3.909 (Note: pads with a 0)
-// Stretch Goals: Create a currency formatting function that simplifies the use of: Intl.NumberFormat
+// Stretch Goals: Create a currency formatting function
+// that simplifies the use of: Intl.NumberFormat
 // intFormat(amount, countryCode, style)
 const toDollars = (amount) => {
-  const numberFormat = amount.toFixed(2)
-  return `$${numberFormat}`
-}
+  const numberFormat = amount.toFixed(2);
+  return `$${numberFormat}`;
+};
 /* Example:
 console.log(toDollars(83.9))*/
 module.exports.toDollars = toDollars;
@@ -87,10 +92,10 @@ module.exports.toDollars = toDollars;
 
 // tax(rate) - returns the amount with tax
 const tax = (price)  => {
-  const rate = 8.5
+  const rate = 8.5;
   const totalPrice = price * rate / 100 + price;
   return totalPrice;
-}
+};
 /*Example
 console.log(tax(400));*/
 module.exports.tax = tax;
@@ -100,8 +105,8 @@ module.exports.tax = tax;
 const calculateInterest = function (total, years, ratePercent, roundToPlaces) {
   var interestRate = ((ratePercent/100) + 1);
   return (total * Math.pow(interestRate, years)).toFixed(roundToPlaces);
-}
-/*Example:
+};
+/* Example:
 console.log(calculateInterest(995, 13, 2, 2)); */
 module.exports.calculateInterest = calculateInterest;
 
@@ -119,15 +124,15 @@ module.exports.getMortgagePayment = getMortgagePayment;
 
 // Challenge 10 intToHex(int) -> #332211
 Number.prototype.hexString = function () {
-  return this.toString(16)
-}
-const intInput = 34
+  return this.toString(16);
+};
+const intInput = 34;
 
 
 // random(n) - returns an integer from 0 to n - 1
 Number.prototype.random = function () {
-  return Math.random(this)
-}
+  return Math.random(this);
+};
 
 function getRandomArbitrary(max ) {
   return Math.round(Math.random() * (max -1 ));
@@ -147,7 +152,7 @@ module.exports.randomIntegerInRange = randomIntegerInRange;
 // randomColor() - Returns a random hex color
 const  randomHexColor = ()  => {
   return `#${Math.floor(Math.random() * 0xffffff).toString(16)}`;
-}
+};
 /* Example:
 console.log(randomHexColor());*/
 module.exports.randomHexColor = randomHexColor;
