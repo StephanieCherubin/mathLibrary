@@ -22,10 +22,21 @@ Number.prototype.ceil = function() {
 // Challenge 3 pad(x, y) - pads Number with x 0s before, and y 0s after.
 // Example: 34.801.pad(4,4) -> 0034.8010
 // or Example: pad(34.801, 4,4) -> 0034.8010
-const pad = (str, length) =>
-  str.padStart((str.length + length), 0) +
-  str.padEnd(str.length + length, 0)
-console.log(pad(String(34.801), 4,4))
+
+// const pad = (str, length) =>
+//   str.padStart((str.length + length), 0) +
+//   str.padEnd(str.length + length, 0)
+// console.log(pad(String(34.801), 4,4))
+
+const pad = (num, before = 0, after = 0) => {
+  let l = String(num).split('.')
+  if (l.length === 1) {
+    l.push('0')
+  }
+  l[0] = l[0].length < before ? '0'.repeat((before - l[0].length)) + l[0] : l[0]
+  l[1] = l[1].length < after ? l[1] + '0'.repeat((after - l[1].length)) : l[1]
+  return l.join('.')
+}
 
 
 const degToRad = (deg) => {
