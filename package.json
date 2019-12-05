@@ -2,8 +2,14 @@
   "name": "mathlibrary",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "umd/mathSubstitution.js",
+  "module": "esm/index.js",
+  "files": [
+    "esm/*",
+    "emd/*"
+  ],
   "scripts": {
+    "prepare": "rollup --config",
     "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test": "jest",
     "test:coverage": "npm test -- --coverage",
