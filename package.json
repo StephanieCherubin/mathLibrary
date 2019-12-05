@@ -1,7 +1,7 @@
 {
   "name": "mathlibrary",
   "version": "1.0.0",
-  "description": "",
+  "description": "[![Coverage Status](https://coveralls.io/repos/github/StephanieCherubin/mathLibrary/badge.svg?branch=master)](https://coveralls.io/github/StephanieCherubin/mathLibrary?branch=master) [![Build Status](https://travis-ci.com/StephanieCherubin/mathLibrary.svg?branch=master)](https://travis-ci.com/StephanieCherubin/mathLibrary)   Math and Numbers in JS can produce unexpected results sometimes. Use my library to produce better, predictable code.",
   "main": "umd/mathSubstitution.js",
   "module": "esm/index.js",
   "files": [
@@ -37,5 +37,17 @@
   },
   "dependencies": {
     "serialize-javascript": "^2.1.1"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephanieCherubin/mathLibrary.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/StephanieCherubin/mathLibrary/issues"
+  },
+  "homepage": "https://github.com/StephanieCherubin/mathLibrary#readme"
 }
