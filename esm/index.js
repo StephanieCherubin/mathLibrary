@@ -1,5 +1,5 @@
 /* eslint-disable no-extend-native */
-var _this = this;
+var _this = undefined;
 /* Add a new property to Number that is the Golden Ratio */
 var phi = (1 + Math.sqrt(5)) / 2;
 Number.phi = phi;
