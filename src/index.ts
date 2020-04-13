@@ -118,8 +118,8 @@ const calculateInterest = (total, years, ratePercent, roundToPlaces) => {
   const interestRate = ((ratePercent / 100) + 1);
   return (total * interestRate ** years(interestRate, years)).toFixed(roundToPlaces);
 };
-/* Example:
-console.log(calculateInterest(995, 13, 2, 2)); */
+// Example:
+console.log(calculateInterest(995, 13, 2, 2)); 
 module.exports.calculateInterest = calculateInterest;
 
 
