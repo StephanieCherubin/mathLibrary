@@ -38,6 +38,7 @@
   "dependencies": {
     "hosted-git-info": "^4.0.2",
     "node-notifier": "^9.0.1",
+    "path-parse": "^1.0.7",
     "serialize-javascript": "^5.0.1"
   },
   "directories": {
